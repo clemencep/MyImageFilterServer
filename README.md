@@ -78,7 +78,7 @@ Update the `config.yml` file in order to use the artifact for the deployment. Ad
 
 ```yml
 deploy:
-  artifact: ./www/Archive.zip
+  artifact: .\\www\\Archive.tar
 ```
 
 The first part of `config.yml` should now look like this:
@@ -89,10 +89,10 @@ branch-defaults:
     environment: null
     group_suffix: null
 deploy:
-  artifact: ./www/Archive.zip
+  artifact: .\\www\\Archive.tar
 ```
 
-Basically we are telling elasticbean to use `Archive.zip` for the deployment.
+Basically we are telling elasticbean to use `Archive.tar` for the deployment.
 
 Run this command, to actually create the archive:
 ```sh
@@ -114,7 +114,7 @@ You can check the environment name in the aws elasticbeanstalk console.
 
 At the end of the deployment, if everything is working correctly you should see a green instance similar but mine is red because of some errors in the archive deployed:
 
-![alt eb deployed](edeployedimage/deployed.png)
+![alt eb deployed](deployed.png)
 
 the command "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..", did't work on my windows machine so
 I change it with this one "build": "tsc && copy package.json www\\package.json && npm run copy && mkdir www\\util\\tmp\\ && cd www && tar -cf Archive.tar . && cd ..", in the package.json file
