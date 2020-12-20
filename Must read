@@ -1,0 +1,5 @@
+the command "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..", did't work on my windows machine so
+I change it with this one "build": "tsc && copy package.json www\\package.json && npm run copy && mkdir www\\util\\tmp\\ && cd www && tar -cf Archive.tar . && cd ..", in the package.json file
+now, my application on the elastic Beanstalk platfom is in server state and the important error is that it can't unzip the archive.tar i deployed.
+
+My-ImageFilter-Server-dev.us-east-2.elasticbeanstalk.com
