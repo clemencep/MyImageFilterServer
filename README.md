@@ -147,6 +147,10 @@ $ eb deploy <your-environment-name>
 
 You can check the environment name in the aws elasticbeanstalk console.
 
-At the end of the deployment, if everything is working correctly you should see a green instance similar to the below screenshot:
+At the end of the deployment, if everything is working correctly you should see a green instance similar but mine is red because of some errors in the archive deployed:
 
-![alt eb deployed](./eb_deployed.png)
+![alt eb deployed](.edeployedimage/deployed.png)
+
+the command "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..", did't work on my windows machine so
+I change it with this one "build": "tsc && copy package.json www\\package.json && npm run copy && mkdir www\\util\\tmp\\ && cd www && tar -cf Archive.tar . && cd ..", in the package.json file
+now, my application on the elastic Beanstalk platfom is in server state and the important error is that it can't unzip the archive.tar i deployed.
