@@ -6,8 +6,6 @@ The processed image, will then be sent as response to the user. Once the image i
 
 ## Table of contents
 + [Get started](#get-started)
-  * [Setup Python3 environment](#setup-python3-environment)
-  * [Install Python dependencies](#install-python-dependencies)
   * [Setup Node environment](#setup-node-environment)
 + [Available endpoints](#availabe-endpoints)
   * [Endpoint examples](#endpoint-examples)
@@ -18,39 +16,6 @@ The processed image, will then be sent as response to the user. Once the image i
 ## Get started
 This microservice makes use of Nodejs to process requests and responses, and python3 to process the image.
 
-### Setup Python3 environment
-It is recommended to create a virtual environment for the project.
-
-If you don't have the python3 package, run the following command.
-```sh
-$ sudo apt-get install python3-venv
-```
-
-Navigate into your project folder and create a new enviornment.
-```sh
-$ sudo python3 -m venv env
-```
-
-`env` is the name of the environment. You can give any name you like.
-
-Activate the new environment.
-
-```sh
-$ source <path-to-enviornment>/bin/activate
-
-# Considering the environment is called env the command will be
-$ source env/bin/activate
-```
-
-### Install Python dependencies
-This service needs two dependencies in order to work
-1. OpenCV
-2. numpy (required by OpenCV)
-
-Type the following command to install the two libraries.
-```sh
-$ pip3 install -r requirements.txt
-```
 
 ### Setup Node environment
 
@@ -149,7 +114,7 @@ You can check the environment name in the aws elasticbeanstalk console.
 
 At the end of the deployment, if everything is working correctly you should see a green instance similar but mine is red because of some errors in the archive deployed:
 
-![alt eb deployed](.edeployedimage/deployed.png)
+![alt eb deployed](edeployedimage/deployed.png)
 
 the command "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..", did't work on my windows machine so
 I change it with this one "build": "tsc && copy package.json www\\package.json && npm run copy && mkdir www\\util\\tmp\\ && cd www && tar -cf Archive.tar . && cd ..", in the package.json file
