@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "b6f16d26-6aca-4f36-9af5-becbb9f0f72e",
+		"name": "myimagefilter-postman",
+		"description": "postman collection for te Image filter assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rose flower",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tulip flowers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
